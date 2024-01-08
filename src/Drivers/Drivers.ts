@@ -9,3 +9,15 @@ export enum DriverStatus {
   TOO_OLD = "too old",
   ELIGIBLE = "eligible",
 }
+
+export let valid: string;
+
+export function ageTest(age: number): string {
+  if (age < 16 )
+    valid = DriverStatus.TOO_YOUNG
+  else if (age > 85)
+    valid = DriverStatus.TOO_OLD;
+  else 
+    valid = DriverStatus.ELIGIBLE;
+  return valid
+}
